@@ -2,11 +2,15 @@
 
 # expo
 .expo/
-
+.DS_Store
 # dependencies
 /node_modules
 /android
 /ios
+android/
+ios/
+android
+ios
 
 # misc
 .env.local
