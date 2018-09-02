@@ -1,17 +1,17 @@
+import placeImage from '../../../src/assets/approve.gif';
 import {
   ADD_PLACE,
   DELETE_PLACE,
   DESELECT_PLACE,
-  SELECT_PLACE
-}
-from '../actions/actionTypes';
+  SELECT_PLACE,
+} from '../actions/actionTypes';
 
 const initialState = {
   places: [],
-  selectedPlace: null
+  selectedPlace: null,
 };
 
-const reducer = (state =  initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PLACE:
       return {
@@ -19,11 +19,8 @@ const reducer = (state =  initialState, action) => {
         places: state.places.concat({
           key: Math.random().toString(),
           name: action.placeName,
-          image: {
-            uri:
-              '../../assets/approve.gif'
-          }
-        })
+          image: placeImage,
+        }),
       };
     case DELETE_PLACE:
       return {
@@ -31,21 +28,21 @@ const reducer = (state =  initialState, action) => {
         places: state.places.filter(place => {
           return place.key !== state.selectedPlace.key;
         }),
-        selectedPlace: null
+        selectedPlace: null,
       };
     case SELECT_PLACE:
       return {
         ...state,
         selectedPlace: state.places.find(place => {
           return place.key === action.placeKey;
-        })
+        }),
       };
     case DESELECT_PLACE:
       return {
         ...state,
-        selectedPlace: null
+        selectedPlace: null,
       };
-    default: 
+    default:
       return state;
   }
 };

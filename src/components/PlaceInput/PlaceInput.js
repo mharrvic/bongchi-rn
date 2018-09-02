@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
+import React, { Component } from 'react';
+import { View, TextInput, Button, StyleSheet } from 'react-native';
 
 class PlaceInput extends Component {
   state = {
-    placeName: ""
+    placeName: '',
   };
 
   placeNameChangedHandler = val => {
     this.setState({
-      placeName: val
+      placeName: val,
     });
   };
 
   placeSubmitHandler = () => {
-    if (this.state.placeName.trim() === "") {
+    if (this.state.placeName.trim() === '') {
       return;
     }
 
@@ -42,17 +42,17 @@ class PlaceInput extends Component {
 const styles = StyleSheet.create({
   inputContainer: {
     // flex: 1,
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   placeInput: {
-    width: "70%"
+    width: '70%',
   },
   placeButton: {
-    width: "30%"
-  }
+    width: '30%',
+  },
 });
 
 export default PlaceInput;
